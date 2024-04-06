@@ -7,8 +7,8 @@ type Props = {
   answers:string[];
   callback:(e: React.MouseEvent<HTMLButtonElement>) => void;
   userAnswer:AnswerObject | undefined;
-  questionNr:string;
-  totalQuestions:string;
+  questionNr:number;
+  totalQuestions:number;
 }
 
 

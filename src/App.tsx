@@ -53,12 +53,13 @@ const App = () => {
         setScore(prev => prev + 1)
       };
         // save answer in the array for user answers 
-        const answerObject = {
-          questions: questions[number].question, 
-          answer, 
-          correct,
-          correctAnswer: questions[number].correct_answer
-        };
+       const answerObject = {
+        question: questions[number].question, 
+        answer, 
+        correct,
+        correctAnswer: questions[number].correct_answer
+      };
+
         setUserAnswers((prev) => [...prev, answerObject])
     };
   }
@@ -94,8 +95,8 @@ const App = () => {
              <QuestionCard 
              questionNr={number + 1}
              totalQuestions={TOTAL_QUESTIONS}
-             question={questions[number].question}
-             answers={questions[number].answers}
+             question={questions[number]?.question}
+             answers={questions[number]?.answers}
              userAnswer={userAnswers ? userAnswers[number] : undefined}
              callback={checkAnswer}
            />
